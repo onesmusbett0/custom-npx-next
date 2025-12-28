@@ -4,16 +4,17 @@ const { spawn } = require('child_process');
 const path = require('path');
 const open = require('open');
 
-// Start the Next.js development server
+const npmCommand = process.platform === 'win32' ? 'npm.cmd' : 'npm';
+
 const startServer = () => {
-    const serverProcess = spawn('npm', ['run', 'dev'], {
+    const serverProcess = spawn(npmCommand, ['run', 'dev'], {
         cwd: path.join(__dirname, '..'),
-        stdio: 'inherit'
+        stdio: 'inherit',
+        shell: true, // 🔑 REQUIRED on Windows for .cmd
     });
 
-    // Wait a bit for the server to start, then open Chrome
     setTimeout(() => {
-        open('http://localhost:3000', { app: { name: 'chrome' } });
+        open('http://localhost:3000');
     }, 3000);
 
     serverProcess.on('error', (err) => {

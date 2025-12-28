@@ -70,7 +70,7 @@ app.post('/api/create-project', async (req, res) => {
         }
 
         res.json({ 
-            success: true, 
+            success: true,  
             message: `Project ${projectName} created successfully` 
         });
     } catch (error: any) {
