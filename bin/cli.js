@@ -3,9 +3,11 @@
 const { spawn } = require('child_process');
 const path = require('path');
 const open = require('open');
+
 const pkg = require('../package.json');
 
 const npmCommand = process.platform === 'win32' ? 'npm.cmd' : 'npm';
+
 
 const startServer = () => {
     // Capture the directory where the user invoked the CLI (NOT where this package lives).
@@ -30,8 +32,9 @@ const startServer = () => {
 
     serverProcess.on('error', (err) => {
         console.error('Failed to start server:', err);
+
         process.exit(1);
-    });
+    }
 };
 
 const args = process.argv.slice(2);

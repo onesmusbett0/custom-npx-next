@@ -40,7 +40,9 @@ const projectsBasePath = projectsBasePathEnv || projectsBasePathDefault;
 
 app.post('/api/create-project', async (req, res) => {
     try {
+
         const { projectName, templatePath, initGit, openVSCode, basePath }: ProjectConfig = req.body;
+
 
         // Validate project name
         if (!projectName.match(/^[a-zA-Z0-9-_]+$/)) {
@@ -61,6 +63,7 @@ app.post('/api/create-project', async (req, res) => {
         console.log('[create-custom] projectsBasePath(env/default)=', projectsBasePath);
         console.log('[create-custom] resolvedBasePath=', resolvedBasePath);
         console.log('[create-custom] projectPath=', projectPath);
+
 
         // Check if directory already exists
         if (await fs.pathExists(projectPath)) {

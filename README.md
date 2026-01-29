@@ -29,8 +29,8 @@ cd create-custom
 # Install dependencies
 npm install
 
-# Link the package globally
-npm link
+# Install the package globally
+npm install -g
 ```
 
 ## Usage
@@ -38,7 +38,7 @@ npm link
 Once installed, you can create new projects from anywhere in your terminal:
 
 ```bash
-create-custom
+npx create-custom
 ```
 
 This will:
@@ -73,9 +73,7 @@ create-custom/
 │   ├── vite/
 │   │   ├── vue-ts/
 │   │   └── vue-js/
-│   └── react-native/
-│       ├── typescript/
-│       └── javascript/
+│   └── react-native-template
 └── package.json
 ```
 
@@ -94,13 +92,28 @@ create-custom/
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+## Screenshots
+
+### Comandline setup
+![Terminal setup](screenshots/cli-screenshot.png)
+
+### Home Page
+![Home Page](screenshots/1.png)
+
+### Project Creation
+![Project Creation Modal](screenshots/2.png)
+
+### VS code setup
+![VS code screenshot](screenshots/vscode.png)
+
+---
 ## License
 
 MIT
 
 ## Author
 
-Your Name
+Onesmuskipchumba0
 
 ## Acknowledgments
 
