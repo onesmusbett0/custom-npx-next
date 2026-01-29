@@ -116,6 +116,9 @@ export default function Home() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
+                    // Where the user ran `npx create-custom` from (set by the CLI).
+                    // This makes project creation independent of the API server's own cwd.
+                    basePath: process.env.NEXT_PUBLIC_CREATE_CUSTOM_CWD,
                     projectName,
                     templatePath: selectedVariant?.templatePath,
                     initGit,
